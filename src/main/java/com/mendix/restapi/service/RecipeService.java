@@ -186,4 +186,5 @@ public class RecipeService {
     public Boolean dataExists(){
         return recipeRepository.count()>0;
     }
+    //add method
 }
