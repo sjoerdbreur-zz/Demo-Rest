@@ -111,10 +111,17 @@ public class RecipeService {
             Recipe testRecipe = new Recipe();
 
             testRecipe.setId(customGenerator.generateRecipeId());
-            testRecipe.setDescription("This is a tester Recipe");
+            testRecipe.setDescription("Brown the meat in a little butter and cook until the meat is brown -- about\n" +
+                    "  10 minutes. Add all other ingredients and let simmer for 30 minutes. Your\n" +
+                    "  choice of hot sauce may be added to taste.\n" +
+                    "  \n" +
+                    "  Recipe by: MasterCook Archives\n" +
+                    "  \n" +
+                    "  Posted to recipelu-digest Volume 01 Number 577 by Rodeo46898\n" +
+                    "  &lt;Rodeo46898@aol.com&gt; on Jan 22, 1998");
 
-            RecipeHead recipeHead=new RecipeHead(testRecipe.getId(),"Paneer makhni",6,testRecipe);
-            Category category1=new Category("Main Dish");
+            RecipeHead recipeHead=new RecipeHead(testRecipe.getId(),"30 Minute Chili",6,testRecipe);
+            Category category1=new Category("Main_Dish");
             Category category2=new Category("Chilli");
             CategoryRepository.save(category1);
             CategoryRepository.save(category2);
@@ -129,12 +136,12 @@ public class RecipeService {
             Ingredient ing=new Ingredient();
            // long a=customGenerator.generateIngredientId();
             ing.setId(customGenerator.generateIngredientId());
-            ing.setItems("paneer");
+            ing.setItems("Ground chuck or lean ground; beef");
             ing.setIngId(testRecipe.getId());
             //EntityManager=
             //Object id = entityManagerFactory.getPersistenceUnitUtil().getIdentifier(entity);
            // IngredientRepository.save(ing);
-            IngredientAmount ingAmount=new IngredientAmount(ing.getId(),1,"gram");
+            IngredientAmount ingAmount=new IngredientAmount(ing.getId(),1,"pound");
             IngredientAmountRepository.save(ingAmount);
             ing.setIngAmount(ingAmount);
             IngredientRepository.save(ing);
@@ -142,10 +149,10 @@ public class RecipeService {
 
             Ingredient ing2=new Ingredient();
             ing2.setId(customGenerator.generateIngredientId());
-            ing2.setItems("Butter");
+            ing2.setItems("Onion; large, chopped");
             ing2.setIngId(testRecipe.getId());
             //IngredientRepository.save(ing2);
-            IngredientAmount ingAmount2=new IngredientAmount(ing2.getId(),1,"lb");
+            IngredientAmount ingAmount2=new IngredientAmount(ing2.getId(),1,"");
             IngredientAmountRepository.save(ingAmount2);
             ing2.setIngAmount(ingAmount2);
             IngredientRepository.save(ing2);
@@ -153,10 +160,10 @@ public class RecipeService {
 
             Ingredient ing3=new Ingredient();
             ing3.setId(customGenerator.generateIngredientId());
-            ing3.setItems("Onion; large, chopped");
+            ing3.setItems("Kidney beans; (12 oz)");
             ing3.setIngId(testRecipe.getId());
             //IngredientRepository.save(ing3);
-            IngredientAmount ingAmount3=new IngredientAmount(ing3.getId(),1,"lb");
+            IngredientAmount ingAmount3=new IngredientAmount(ing3.getId(),1,"can");
             IngredientAmountRepository.save(ingAmount3);
             IngredientRepository.save(ing3);
             ing3.setIngAmount(ingAmount3);

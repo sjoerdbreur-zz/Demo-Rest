@@ -18,6 +18,7 @@ public class Recipe implements Serializable {
 
     private String id;
 
+    @Column(length=10485760)
     @Size(min=2, message="description should have atleast 20 characters")
     private String description;
 

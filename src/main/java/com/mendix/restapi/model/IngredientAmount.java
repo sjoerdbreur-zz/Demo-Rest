@@ -15,8 +15,8 @@ public class IngredientAmount {
     @Positive
     private int quantity;
 
-    @NotNull
-    @Size(min=2, message="Unit should have atleast 2 characters")
+    //@NotNull
+   // @Size(min=2, message="Unit should have atleast 2 characters")
     private String unit;
    /* @OneToOne(fetch = FetchType.LAZY,
             cascade =  CascadeType.ALL,
