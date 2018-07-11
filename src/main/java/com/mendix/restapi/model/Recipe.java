@@ -23,13 +23,13 @@ public class Recipe implements Serializable {
 
     @OneToOne(fetch = FetchType.LAZY, optional = false, cascade =  CascadeType.ALL)
     @JoinColumn(name = "id",referencedColumnName = "id",nullable = false)
-    @NotNull
+  //  @NotNull
     @Valid
     private RecipeHead recipeHead ;
 
     @OneToMany(fetch = FetchType.LAZY,  cascade =  CascadeType.ALL)
     @JoinColumn(name = "ingId",referencedColumnName = "id",nullable = false,insertable = false,updatable = false)
-    @NotNull
+ //   @NotNull
     @Valid
     private List<Ingredient> ingredients;
 
